@@ -1,0 +1,34 @@
+class Solution {
+  public:
+    /*  Function to implement Bellman Ford
+    *   edges: vector of vectors which represents the graph
+    *   S: source vertex to start traversing graph with
+    *   V: number of vertices
+    */
+    vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {
+        // Code here
+        vector<int>dis(V,1e8);
+        dis[S]=0;
+        for(int i=0;i<V-1;i++){
+            for(auto it:edges){
+                int a=it[0];
+                int b=it[1];
+                int c=it[2];
+                if(dis[a]!=1e8 && dis[a]+c<dis[b]){
+                    dis[b]=dis[a]+c;
+                }
+            }
+        }
+        for(auto it:edges){
+                int a=it[0];
+                int b=it[1];
+                int c=it[2];
+                if(dis[a]!=1e8 && dis[a]+c<dis[b]){
+                   return {-1};
+                }
+            }
+            return dis;
+        
+    }
+};
+// relax edge n-1 times and if at nth time it is updating negative cycle is present
