@@ -1,0 +1,5 @@
+see while calculating topo sort in lex order we need to find by using priority queue;
+aur find topo sort phr uske bd agar size n nhi hua tw cycle hai aur equal hua tw nhi hai  cycle;
+agr normal topo sort chaiye tw queue k order m nikal lo;
+ directed cyclic nikal na hai tw ek vis arry rkho aur nikal lo; warna undirected me parent aur bachha hai;
+ 
