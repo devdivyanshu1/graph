@@ -48,4 +48,7 @@ public:
             size[ulp_u] += size[ulp_v]; 
         }
     }
+  int getSize(int node) {
+        return size[findUPar(node)];
+    }
 }; 
